@@ -7,5 +7,10 @@
 `cd struct_user_dir`<br>
 **Conceder permissão de execução no script:**<br>
 `chmod +x userstruct.sh`<br>
-**Executar o script** <br>
-`./userstruct.sh`
+**Obter ajuda do script** <br>
+`./userstruct.sh`<br>
+`./userstruct.sh help`
+**Criar a estrutura conforme o arquivo anexo**
+`./userstruct.sh create`
+**Remover a estrutura conforme o arquivo anexo**
+`./userstruct.sh remove
