@@ -9,8 +9,8 @@
 `chmod +x userstruct.sh`<br>
 **Obter ajuda do script** <br>
 `./userstruct.sh`<br>
-`./userstruct.sh help`
-**Criar a estrutura conforme o arquivo anexo**
-`./userstruct.sh create`
-**Remover a estrutura conforme o arquivo anexo**
-`./userstruct.sh remove
+`./userstruct.sh help`<br>
+**Criar a estrutura conforme o arquivo anexo**<br>
+`./userstruct.sh create`<br>
+**Remover a estrutura conforme o arquivo anexo**<br>
+`./userstruct.sh remove<br>
