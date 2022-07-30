@@ -54,4 +54,4 @@ case $1 in
   *)
     echo "Opção inválida"
   ;;
-esac
+esac 2> /dev/null
