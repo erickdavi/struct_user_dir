@@ -5,8 +5,6 @@
 #O formato do arquivo csv:
 #group,user,directory
 
-
-
 WORKFILE="usergroups.csv"
 
 
@@ -17,8 +15,6 @@ function rm_old_struct(){
   awk -F, '{if($2 != "root"){printf "userdel -r %s\n",$2}}' $WORKFILE
   awk -F, '{if($1 !="root"){printf "groupdel %s\n",$1}}' $WORKFILE | uniq
   awk -F, '{printf "rm -rf %s\n",$3}' $WORKFILE | uniq
-  
-
 }
 
 #Realiza a criação dos usuários e grupos
@@ -27,7 +23,7 @@ function create_user_group(){
   awk -F, '{if($1 !="root"){printf "groupadd %s\n",$1}}' $WORKFILE | uniq
 
   #Realiza a criação dos usuários inserindo-os em seus grupos suplementares
-  awk -F, '{if($2 != "root"){printf "useradd %s -G %s\n",$2,$1}}' $WORKFILE
+  awk -F, '{if($2 != "root"){printf "useradd %s -G %s -d /home/%s\n",$2,$1,$2}}' $WORKFILE
 }
 
 #Realiza a criação dos diretórios e atribui propriedade e permissão conforme o enunciado do exercício
@@ -41,9 +37,21 @@ function create_dir(){
   #Realiza o ajuste das permissões desejadas nos diretórios
   awk -F, '{if ($3 !="/publico"){printf "chmod 770 %s\n",$3}else{printf "chmod 777 %s\n",$3}}' $WORKFILE | uniq
 }
-function main(){
-  rm_old_struct
-  create_user_group
-  create_dir
-}
-main  | bash
+
+case $1 in
+  "create")
+    create_user_group | bash
+    create_dir | bash
+  ;;
+  "remove")
+    rm_old_struct | bash
+  ;;
+  "" | "help")
+    echo "Como usar:"
+    echo "${0} create - Cria a estrutura de grupos, usuários e diretórios com base no arquivo anexo"
+    echo "${0} remove - Remove a estrutura de grupos, usuários e diretórios com base no arquivo anexo"
+  ;;
+  *)
+    echo "Opção inválida"
+  ;;
+esac
