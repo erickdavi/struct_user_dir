@@ -6,6 +6,6 @@
 **Acessar o diretório:** <br>
 `cd struct_user_dir`<br>
 **Conceder permissão de execução no script:**<br>
-`mkdir +x userstruct.sh`<br>
+`chmod +x userstruct.sh`<br>
 **Executar o script** <br>
 `./userstruct.sh`
