@@ -2,10 +2,10 @@
 
 #### Como usar:
 **Realizar o download do repositório:**<br>
-`git clone https://github.com/erickdavi/struct_user_dir.git`
+`git clone https://github.com/erickdavi/struct_user_dir.git`<br>
 **Acessar o diretório:** <br>
-`cd struct_user_dir`
+`cd struct_user_dir`<br>
 **Conceder permissão de execução no script:**<br>
-`mkdir +x userstruct.sh`
-**Executar o script** 
+`mkdir +x userstruct.sh`<br>
+**Executar o script** <br>
 `./userstruct.sh`
