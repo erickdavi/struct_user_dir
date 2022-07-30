@@ -46,4 +46,4 @@ function main(){
   create_user_group
   create_dir
 }
-main  
+main  | bash
