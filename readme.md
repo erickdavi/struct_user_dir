@@ -13,4 +13,4 @@
 **Criar a estrutura conforme o arquivo anexo**<br>
 `./userstruct.sh create`<br>
 **Remover a estrutura conforme o arquivo anexo**<br>
-`./userstruct.sh remove<br>
+`./userstruct.sh remove`<br>
