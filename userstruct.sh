@@ -23,7 +23,7 @@ function create_user_group(){
   awk -F, '{if($1 !="root"){printf "groupadd %s\n",$1}}' $WORKFILE | uniq
 
   #Realiza a criação dos usuários inserindo-os em seus grupos suplementares
-  awk -F, '{if($2 != "root"){printf "useradd %s -G %s -d /home/%s -p $(openssl passwd -crypt mudarSenha123@)\n",$2,$1,$2}}' $WORKFILE
+  awk -F, '{if($2 != "root"){printf "useradd %s -G %s -d /home/%s -p $(openssl passwd -1 mudarSenha123@) -s /bin/bash\n",$2,$1,$2}}' $WORKFILE
 }
 
 #Realiza a criação dos diretórios e atribui propriedade e permissão conforme o enunciado do exercício
